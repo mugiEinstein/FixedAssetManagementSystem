@@ -1,0 +1,118 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+
+/* ============================================ */
+/* 深色模式样式 */
+/* ============================================ */
+html.dark {
+  --el-bg-color: #1d1e1f;
+  --el-bg-color-overlay: #252526;
+  --el-text-color-primary: #e5eaf3;
+  --el-text-color-regular: #cfd3dc;
+  --el-border-color: #4c4d4f;
+  --el-fill-color-blank: #1d1e1f;
+}
+
+html.dark body {
+  background-color: #141414;
+  color: #e5eaf3;
+}
+
+html.dark .navbar {
+  background-color: #1d1e1f !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+html.dark .sidebar {
+  background-color: #1d1e1f !important;
+}
+
+html.dark .app-main {
+  background-color: #141414 !important;
+}
+
+html.dark .el-card {
+  background-color: #1d1e1f;
+  border-color: #4c4d4f;
+}
+
+html.dark .el-table {
+  background-color: #1d1e1f;
+  color: #e5eaf3;
+}
+
+html.dark .el-table th,
+html.dark .el-table tr {
+  background-color: #1d1e1f;
+}
+
+html.dark .el-table--striped .el-table__body tr.el-table__row--striped td {
+  background-color: #252526;
+}
+
+html.dark .el-table__row:hover > td {
+  background-color: #2d2d2d !important;
+}
+
+html.dark .el-input__wrapper {
+  background-color: #252526;
+  box-shadow: 0 0 0 1px #4c4d4f inset;
+}
+
+html.dark .el-button--default {
+  background-color: #252526;
+  border-color: #4c4d4f;
+  color: #e5eaf3;
+}
+
+html.dark .user-name,
+html.dark .collapse-btn,
+html.dark .notification-icon,
+html.dark .theme-toggle {
+  color: #e5eaf3 !important;
+}
+
+html.dark .el-breadcrumb__inner {
+  color: #cfd3dc !important;
+}
+
+html.dark .notification-title {
+  color: #e5eaf3 !important;
+}
+
+html.dark .notification-desc {
+  color: #909399 !important;
+}
