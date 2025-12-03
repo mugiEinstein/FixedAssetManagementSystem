@@ -84,7 +84,7 @@
 
 ---
 
-## 📂 目录结构
+## 📂 主要目录结构
 
 ```text
 FixedAssetManagementSystem/
