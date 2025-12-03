@@ -1,0 +1,74 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: fixed-asset-management
+
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-2ze5g00fo0zy6956emo.mysql.rds.aliyuncs.com:3306/fixedassets_manage?characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+    username: FixedAssets_manage
+    password: Fm123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 10
+      max-active: 20
+      validation-query: SELECT 1
+
+  # 2. Redis配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+
+  # Kafka配置
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: fams-group
+
+  # 4. Docker Compose
+  docker:
+    compose:
+      enabled: true
+      lifecycle-management: start-and-stop
+
+# MyBatis-Plus配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: ztt. fixedassetmanagement.entity
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# JWT配置
+jwt:
+  secret: fixedasset2024secretkeyforjwttokengenerationandsecurity
+  expiration: 86400000
+
+# 文件上传目录
+file:
+  upload-dir: uploads
+
+# Actuator配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# Swagger配置
+springdoc:
+  swagger-ui:
+    tags-sorter: alpha
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
